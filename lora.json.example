@@ -1,0 +1,16 @@
+{
+    "loras": [
+        {
+            "name": "sdxl-emoji",
+            "sha256": "5934fe70ec5f06be145670315a4cd20334abb51ace38bee4f9265fc82d035f54",
+            "type": "sdxl",
+            "url": "https://www.xxx.com",
+            "triggerWords": "emoji",
+            "description": "sdxl emoji",
+            "example": [
+                "sdxl-emoji-1.png",
+                "sdxl-emoji-2.png"
+            ]
+        }
+    ]
+}

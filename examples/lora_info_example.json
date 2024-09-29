@@ -1,0 +1,259 @@
+{
+  "last_node_id": 70,
+  "last_link_id": 23,
+  "nodes": [
+    {
+      "id": 70,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": -805,
+        "1": -546
+      },
+      "size": [
+        537.3623449984866,
+        102.03960947688859
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 23,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "516fe22303b8a24f800a0a24a8f4c864121411b7261206c406183c1103b7bf37"
+      ]
+    },
+    {
+      "id": 41,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": -801,
+        "1": -891
+      },
+      "size": {
+        "0": 315,
+        "1": 76
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 22,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "StdGBRedmAF,Studio Ghibli"
+      ]
+    },
+    {
+      "id": 47,
+      "type": "LoraInfo",
+      "pos": {
+        "0": -1639,
+        "1": -824
+      },
+      "size": [
+        569.5341468791344,
+        220.47554999354588
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "TRIGGER_WORDS",
+          "type": "STRING",
+          "links": [
+            22
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "LORA_DESCRIPTION",
+          "type": "STRING",
+          "links": [
+            18
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "LORA_HASH",
+          "type": "STRING",
+          "links": [
+            23
+          ],
+          "slot_index": 2,
+          "shape": 3
+        },
+        {
+          "name": "EXAMPLE_IMAGE",
+          "type": "IMAGE",
+          "links": [
+            20
+          ],
+          "slot_index": 3,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraInfo"
+      },
+      "widgets_values": [
+        "sdxl-work\\StudioGhibli.Redmond-StdGBRRedmAF-StudioGhibli.safetensors"
+      ]
+    },
+    {
+      "id": 48,
+      "type": "PreviewImage",
+      "pos": {
+        "0": -788,
+        "1": -371
+      },
+      "size": [
+        379.20605554253893,
+        448.69217627262026
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 20
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 43,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": -802,
+        "1": -725
+      },
+      "size": {
+        "0": 389.814697265625,
+        "1": 85.67716217041016
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 18,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "SDXL 吉卜力风格"
+      ]
+    }
+  ],
+  "links": [
+    [
+      18,
+      47,
+      1,
+      43,
+      0,
+      "STRING"
+    ],
+    [
+      20,
+      47,
+      3,
+      48,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      47,
+      0,
+      41,
+      0,
+      "STRING"
+    ],
+    [
+      23,
+      47,
+      2,
+      70,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7972024500000023,
+      "offset": [
+        2166.7608524869083,
+        1089.9485493179002
+      ]
+    }
+  },
+  "version": 0.4
+}
