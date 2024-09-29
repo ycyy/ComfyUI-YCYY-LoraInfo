@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-ycyy-lorainfo"
+description = "show lora info"
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/ycyy/ComfyUI-YCYY-LoraInfo"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "ycyy"
+DisplayName = "ComfyUI-YCYY-LoraInfo"
+Icon = ""
