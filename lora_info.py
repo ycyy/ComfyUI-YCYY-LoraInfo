@@ -86,7 +86,8 @@ class LoraInfo:
                 image = np.array(image).astype(np.float32) / 255.0
                 image = torch.from_numpy(image)[None,]
                 output_list.append(image)
-            output_image = torch.cat(output_list, dim=1) 
+            if output_list:
+                output_image = torch.cat(output_list, dim=1) 
         return (trigger_words,lora_description,lora_hash,output_image)
 
 NODE_CLASS_MAPPINGS = {
