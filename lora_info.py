@@ -3,12 +3,27 @@ import torch
 import hashlib
 import json
 import numpy as np
-from PIL import Image,ImageSequence,ImageOps
+from PIL import Image,ImageOps
 import folder_paths
-import node_helpers
+from server import PromptServer
+from aiohttp import web
+
 directory_path = os.path.dirname(os.path.abspath(__file__))
 lora_json = os.path.join(directory_path,"lora.json")
 example_image_folder = os.path.join(directory_path,"images")
+
+@PromptServer.instance.routes.post("/ycyy/getLoraData")
+async def get_lora_data(request):
+    post = await request.post()
+    lora_name = post.get("lora_name") 
+    lora_file_path = folder_paths.get_full_path("loras", lora_name)
+    lora_file_name = os.path.splitext(os.path.basename(lora_file_path))[0]
+    lora_data = get_lora_info(lora_file_name)
+    return web.Response(
+        text=json.dumps({"data": lora_data}),
+        content_type="application/json",
+    )
+
 # 计算文件sha256 hash
 def calculate_sha256(file_path):
     sha256_hash = hashlib.sha256()
@@ -24,6 +39,7 @@ def get_lora_info(lora_file_name):
         lora_data = lora_data['loras']
         lora_info = next((item for item in lora_data if item['name'] == lora_file_name),None)
     return lora_info
+
 class LoraInfo:
     def __init__(self):
         pass
